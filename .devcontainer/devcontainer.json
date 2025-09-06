@@ -1,0 +1,31 @@
+{
+  "name": "BUDG",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [8080],  // or any port your Java app uses
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack"
+      ],
+      "settings": {
+        "java.jdt.ls.java.home": "/usr/lib/jvm/jdk-24.0.2",             // Match your Dockerfile path
+        "java.configuration.runtimes": [
+            {
+                "name": "JavaSE-24",
+                "path": "/usr/lib/jvm/jdk-24.0.2",
+                "default": true
+            }
+        ]
+      }
+    }
+  },
+  "postCreateCommand": "mvn clean install || true",
+  "remoteUser": "root",
+  "workspaceFolder": "/workspace/budg",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "mounts": [
+    "source=${localWorkspaceFolder}/../data,target=/data,type=bind"
+  ]
+}
