@@ -1,4 +1,4 @@
-package com.budg.transaction;
+package com.budg.resources;
 
 public enum Category {
     Unassigned(0),

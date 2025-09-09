@@ -1,6 +1,7 @@
-package com.budg.transaction;
+package com.budg.data;
 
 import java.time.LocalDate;
+import com.budg.resources.*;
 
 public class Transaction {
     public LocalDate Date;

@@ -3,4 +3,13 @@
   <groupId>com.budg.app</groupId>
   <artifactId>budg</artifactId>
   <version>0.1</version>
+
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+    <dependency>
+        <groupId>com.mysql</groupId>
+        <artifactId>mysql-connector-j</artifactId>
+        <version>9.4.0</version>
+    </dependency>
+  </dependencies>
 </project>
