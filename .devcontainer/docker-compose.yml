@@ -1,0 +1,31 @@
+services:
+  db: 
+    image: mysql:lts
+    container_name: budg-db
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: testdb
+    volumes:
+      - C:\Projects\budg_db\data:/var/lib/mysql
+    networks:
+      - budg-net
+    ports:
+      - 3307:3307
+  # Run the mysql CLI tool:
+  # docker exec -it budg-db mysql -u root -p
+  
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: budg-dev
+    volumes:
+      - "C:/Projects/budg/proj/budg:/workspace/budg:cached"
+    networks:
+      - budg-net
+    ports:
+      - 8080:8080
+    command: sleep infinity
+    
+networks:
+  budg-net:

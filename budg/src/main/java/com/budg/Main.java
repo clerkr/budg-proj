@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 public class Main {
     public static void main(String[] args) {
         
-        String url = "jdbc:mysql://localhost:3306/testdb";
+        String url = "jdbc:mysql://budg-db:3306/testdb";
         String user = "root";
         String password = "pass";
 
